@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive CV Builder</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Paper Styling */
+        .cv-page {
+            background-color: white;
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .header-info {
+            width: 60%;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 10px 20px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .photo-box {
+            width: 150px;
+            height: 180px;
+            background-color: #eee;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Section Styling */
+        .section-header {
+            background-color: #b3b3b3;
+            color: black;
+            padding: 5px 10px;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+        }
+
+        .row {
+            display: flex;
+            padding: 8px 10px;
+            align-items: flex-start;
+        }
+
+        .row:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .date-col {
+            width: 30%;
+            font-size: 14px;
+        }
+
+        .detail-col {
+            width: 70%;
+            font-size: 14px;
+        }
+
+        .detail-col strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        ul {
+            margin: 5px 0 0 0;
+            padding-left: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        .signature {
+            margin-top: 10px;
+            font-family: 'Cursive', brush script mt, sans-serif;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        /* Editable Hint */
+        [contenteditable="true"]:hover {
+            outline: 1px dashed #2196F3;
+            background-color: rgba(33, 150, 243, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-page">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-info">
+                <h1 contenteditable="true">CV</h1>
+                <div class="info-grid">
+                    <div class="label">Name</div>
+                    <div contenteditable="true">Firstname Lastname</div>
+                    
+                    <div class="label">Birthday</div>
+                    <div contenteditable="true">5th January 1982 in London</div>
+                    
+                    <div class="label">Address</div>
+                    <div contenteditable="true">1 Kennington Rd<br>London, SE11 6HR</div>
+                    
+                    <div class="label">Phone</div>
+                    <div contenteditable="true">+44 20 1111 1111</div>
+                    
+                    <div class="label">Email</div>
+                    <div contenteditable="true">firstname@lastname.co.uk</div>
+                </div>
+            </div>
+            <div class="photo-box">
+                <!-- In a real site, you'd use an <img> tag here -->
+                <span contenteditable="false">Insert Photo Here<br>(Referencing 1000487675.jpg)</span>
+            </div>
+        </div>
+
+        <!-- Career -->
+        <div class="section-header">Career</div>
+        <div class="row">
+            <div class="date-col" contenteditable="true">seit 11/2016</div>
+            <div class="detail-col">
+                <strong contenteditable="true">Another Challenge Ltd.</strong>
+                <div contenteditable="true">Team assistant</div>
+                <ul>
+                    <li contenteditable="true">Overview of key responsibilities</li>
+                    <li contenteditable="true">Skills, experience and achievements</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="date-col" contenteditable="true">05/2014 - 10/2016</div>
+            <div class="detail-col">
+                <strong contenteditable="true">Second Step PLC</strong>
+                <div contenteditable="true">Personal assistant</div>
+                <ul>
+                    <li contenteditable="true">Overview of key responsibilities</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="date-col" contenteditable="true">01/2012 - 02/2014</div>
+            <div class="detail-col">
+                <strong contenteditable="true">First and One Ltd.</strong>
+                <div contenteditable="true">Intern in marketing</div>
+                <ul>
+                    <li contenteditable="true">Overview of key responsibilities</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section-header">Education</div>
+        <div class="row">
+            <div class="date-col" contenteditable="true">10/2007 - 10/2011</div>
+            <div class="detail-col">
+                <strong contenteditable="true">London School of Economics</strong>
+                <div contenteditable="true">BSc Management</div>
+                <ul>
+                    <li contenteditable="true">Emphasis in Marketing and Management</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="date-col" contenteditable="true">09/2004 - 07/2007</div>
+            <div class="detail-col">
+                <strong contenteditable="true">Example Company Limited</strong>
+                <div contenteditable="true">Apprenticeship as office clerk</div>
+                <ul>
+                    <li contenteditable="true">Scope of training, experience and achievements</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Skills and Interests -->
+        <div class="section-header">Skills and Interests</div>
+        <div class="row">
+            <div class="date-col" contenteditable="true">Language skills</div>
+            <div class="detail-col" contenteditable="true">
+                English: native speaker<br>
+                Spanish: fluent
+            </div>
+        </div>
+        <div class="row">
+            <div class="date-col" contenteditable="true">Computer skills</div>
+            <div class="detail-col" contenteditable="true">
+                Working knowledge: MS Office<br>
+                Basic knowledge: Adobe Photoshop
+            </div>
+        </div>
+        <div class="row">
+            <div class="date-col" contenteditable="true">Interests</div>
+            <div class="detail-col" contenteditable="true">Reading, Sports (Football and Running), Travelling</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div contenteditable="true">London, 1st January 2023</div>
+            <div class="signature" contenteditable="true">Your Signature</div>
+        </div>
+    </div>
+
+</body>
+</html>
